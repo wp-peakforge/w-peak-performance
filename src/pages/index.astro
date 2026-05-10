@@ -1,0 +1,110 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const silos = [
+  {
+    title: "Recovery",
+    subtitle: "Longevity Tech",
+    href: "/recovery",
+    accent: "#c0392b",
+    accentLight: "#e74c3c",
+    icon: "◎",
+    description: "Red light therapy, portable saunas, Dr. Pen microneedling, peptides, and the recovery stack that keeps high-output humans operational.",
+    tags: ["Red Light", "Sauna", "Dr. Pen", "Peptides"],
+  },
+  {
+    title: "Automation",
+    subtitle: "AI & Robotics Gear",
+    href: "/automation",
+    accent: "#1a6fa8",
+    accentLight: "#2589cc",
+    icon: "◈",
+    description: "Robot mowers, robot mops, AI-assisted tools — the automation stack for reclaiming time. Tested in a real home, not a lab.",
+    tags: ["Robot Mower", "Robot Mop", "AI Tools"],
+  },
+  {
+    title: "Field Ops",
+    subtitle: "Outdoors & Racing",
+    href: "/field-ops",
+    accent: "#2a7a3b",
+    accentLight: "#38a350",
+    icon: "◉",
+    description: "Salomon trail gear, snowboarding kit, OC1 canoe racing with Syndi. Pacific conditions, real stakes, honest reports from the field.",
+    tags: ["Salomon", "OC1 Racing", "Snow", "Paddle"],
+  },
+];
+---
+
+<MainLayout title="Home" description="W.Peak Performance — tested by humans, readable by agents. Recovery tech, automation gear, and Pacific outdoor life.">
+  <!-- Hero -->
+  <section class="relative min-h-[80vh] flex items-end pb-16 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/20 via-[#0a0a0a]/60 to-[#0a0a0a]"></div>
+    <!-- Placeholder hero bg — CEO will drop OC1/drone footage here -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#141414] via-[#1e1e1e] to-[#0a0a0a]"></div>
+
+    <div class="relative max-w-6xl mx-auto w-full">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#4ba3d4] mb-4">W.Peak Performance</p>
+      <h1 class="font-serif text-5xl md:text-7xl font-light leading-tight text-[#f5f0e8] mb-6 max-w-3xl">
+        Tested by humans.<br />
+        <span class="text-[#d4cfc4]">Readable by agents.</span>
+      </h1>
+      <p class="text-lg text-[#d4cfc4] max-w-xl mb-8 leading-relaxed">
+        Real gear reviews from real use. Recovery technology, home automation, and Pacific outdoor life — documented for both humans and AI.
+      </p>
+      <div class="flex gap-4">
+        <a href="/gear-reviews"
+           class="px-6 py-3 bg-[#f5f0e8] text-[#0a0a0a] text-sm font-semibold rounded hover:bg-[#ede8dc] transition-colors">
+          Browse All Gear
+        </a>
+        <a href="/about"
+           class="px-6 py-3 border border-[#2a2a2a] text-[#d4cfc4] text-sm font-semibold rounded hover:border-[#4ba3d4] hover:text-[#f5f0e8] transition-colors">
+          Who Tests This
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Silo Cards -->
+  <section class="max-w-6xl mx-auto px-4 pb-24">
+    <p class="text-xs font-mono uppercase tracking-widest text-[#d4cfc4] mb-8">Three silos. Zero BS.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {silos.map((s) => (
+        <a href={s.href}
+           class="group block border border-[#2a2a2a] rounded-lg p-6 hover:border-[#4ba3d4] transition-all duration-200 bg-[#141414] hover:bg-[#1e1e1e]">
+          <div class="flex items-start justify-between mb-4">
+            <span class="text-3xl" style={`color: ${s.accentLight}`}>{s.icon}</span>
+            <span class="text-xs text-[#d4cfc4] font-mono">{s.subtitle}</span>
+          </div>
+          <h2 class="font-serif text-2xl text-[#f5f0e8] mb-3 group-hover:text-[#4ba3d4] transition-colors">
+            {s.title}
+          </h2>
+          <p class="text-sm text-[#d4cfc4] leading-relaxed mb-4">{s.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {s.tags.map(tag => (
+              <span class="text-xs px-2 py-1 border border-[#2a2a2a] rounded text-[#d4cfc4] font-mono">{tag}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Syndi Feature -->
+  <section class="border-t border-[#2a2a2a] py-16 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1">
+        <p class="text-xs font-mono uppercase tracking-widest text-[#38a350] mb-3">Field Ops · Racing</p>
+        <h2 class="font-serif text-3xl text-[#f5f0e8] mb-4">Syndi on the water.</h2>
+        <p class="text-[#d4cfc4] leading-relaxed mb-6">
+          OC1 outrigger canoe racing on Oahuʻs open ocean. Gear, conditioning, race reports — tested by a competitor, not a copywriter.
+        </p>
+        <a href="/field-ops" class="inline-flex items-center gap-2 text-sm text-[#38a350] hover:text-[#4ba3d4] transition-colors font-semibold">
+          See Field Ops gear &rarr;
+        </a>
+      </div>
+      <div class="w-full md:w-80 h-48 rounded-lg bg-[#1e1e1e] border border-[#2a2a2a] flex items-center justify-center">
+        <p class="text-[#2a2a2a] text-sm font-mono">[ OC1 footage — drop in WPeak-Media-Ingest/raw/ ]</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,47 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout
+  title="Media Kit"
+  description="W.Peak Performance media kit — audience, content silos, affiliate partners, and collaboration terms."
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#4ba3d4] mb-3">Partnerships</p>
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-4">Media Kit</h1>
+      <p class="text-lg text-[#d4cfc4]">For brands who want to reach a real audience that tests real gear.</p>
+    </div>
+
+    <div class="space-y-8">
+      <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414]">
+        <h2 class="font-serif text-xl text-[#f5f0e8] mb-3">Content Focus</h2>
+        <div class="grid grid-cols-3 gap-4 text-sm">
+          <div><p class="text-[#e74c3c] font-mono text-xs mb-1">RECOVERY</p><p class="text-[#d4cfc4]">Red light, sauna, peptides, biohacking tools</p></div>
+          <div><p class="text-[#2589cc] font-mono text-xs mb-1">AUTOMATION</p><p class="text-[#d4cfc4]">Robotics, AI tools, smart home</p></div>
+          <div><p class="text-[#38a350] font-mono text-xs mb-1">FIELD OPS</p><p class="text-[#d4cfc4]">Trail, snow, OC1 racing, paddle sports</p></div>
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414]">
+        <h2 class="font-serif text-xl text-[#f5f0e8] mb-3">Affiliate Partners</h2>
+        <div class="flex flex-wrap gap-3 text-sm text-[#d4cfc4]">
+          {["Amazon Associates", "REI", "Backcountry", "West Marine", "DJI"].map(p => (
+            <span class="px-3 py-1 border border-[#2a2a2a] rounded font-mono text-xs">{p}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414]">
+        <h2 class="font-serif text-xl text-[#f5f0e8] mb-3">Collaboration Terms</h2>
+        <ul class="text-sm text-[#d4cfc4] space-y-2 leading-relaxed">
+          <li>→ We buy or borrow gear for testing — we do not accept gifted items in exchange for positive coverage</li>
+          <li>→ Sponsored content is clearly labeled</li>
+          <li>→ All reviews are based on 30+ days of personal use minimum</li>
+          <li>→ Agent-readable Schema.org markup included on every review</li>
+        </ul>
+        <p class="text-sm text-[#d4cfc4] mt-4">Contact: <a href="mailto:hello@w-peak.com" class="text-[#4ba3d4]">hello@w-peak.com</a></p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

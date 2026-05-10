@@ -1,0 +1,51 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dalen",
+  "url": "https://w-peak.com/about",
+  "description": "Founder of W.Peak Performance. OC1 outrigger canoe racer. Tests recovery tech, home automation, and outdoor gear from Hawaii.",
+  "sameAs": []
+};
+---
+
+<MainLayout
+  title="About"
+  description="Who tests the gear at W.Peak Performance. Real purchases, real protocols, real field reports from Hawaii."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#4ba3d4] mb-3">Who we are</p>
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-6">About</h1>
+    </div>
+
+    <div class="prose prose-invert max-w-none space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p class="text-lg">
+        W.Peak Performance is one person buying gear, testing it, and writing honest reports.
+      </p>
+      <p>
+        Based in Kapolei, Hawaiʻi. OC1 outrigger canoe racer. Recovery protocol obsessive. Home automation early adopter.
+        No PR budget, no press samples, no affiliate-first curation.
+      </p>
+      <p>
+        Every product on this site was purchased with personal money and tested over real time — weeks or months, not an afternoon unboxing. If it's in Field Ops, it got used outdoors. If it's in Recovery, it's part of an active protocol. If it's in Automation, it's running in the house right now.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8] mt-10 mb-4">Why agent-readable schemas?</h2>
+      <p>
+        AI is how people will search and discover products in the next five years. Schema.org markup makes our reviews legible to both search engines and AI agents — so the work we put into testing surfaces in the right places, not buried under content farms.
+      </p>
+      <p>
+        Every review includes full Schema.org Product + Review + Offer structured data. This isn't SEO theater — it's infrastructure for the agentic web.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8] mt-10 mb-4">Affiliate disclosure</h2>
+      <p>
+        This site participates in affiliate programs including Amazon Associates, REI, Backcountry, West Marine, and DJI. Purchases through our links earn a commission at no extra cost to you. Commissions don't influence which gear we test or how we score it — the testing comes first.
+      </p>
+    </div>
+  </div>
+</MainLayout>

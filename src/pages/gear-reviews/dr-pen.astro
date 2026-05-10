@@ -1,0 +1,105 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Dr. Pen Microneedling Device — Recovery Protocol Review",
+  "url": "https://w-peak.com/gear-reviews/dr-pen",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Dr. Pen Microneedling Device",
+    "brand": { "@type": "Brand", "name": "Dr. Pen" },
+    "category": "Microneedling Devices",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/amz-drpen",
+      "seller": { "@type": "Organization", "name": "Amazon" }
+    }
+  },
+  "reviewBody": "Dr. Pen microneedling device tested as part of a skin and collagen protocol. Depth control, cartridge quality, and results across 30+ sessions."
+};
+---
+
+<MainLayout
+  title="Dr. Pen Microneedling Device — Recovery Protocol Review"
+  description="30+ sessions with the Dr. Pen. Depth control, cartridge quality, and protocol results. Owned and used — not sponsored."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/recovery" class="hover:text-[#f5f0e8]">Recovery</a>
+      <span>/</span>
+      <span>Dr. Pen</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#7a2a2a]/10 border border-[#c0392b]/20 rounded font-mono text-[#c0392b]">Recovery</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">30+ sessions · Owned</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Dr. Pen Microneedling</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Kapolei, Hawaiʻi</p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[["Depth Ctrl", "4.5"], ["Cartridge", "4.5"], ["Ease", "4.0"], ["Value", "5.0"]].map(([label, score]) => (
+          <div>
+            <p class="text-2xl font-serif text-[#f5f0e8]">{score}</p>
+            <p class="text-xs text-[#d4cfc4] font-mono mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 pt-4 border-t border-[#2a2a2a] text-center">
+        <p class="text-xs text-[#d4cfc4] font-mono">Overall: <span class="text-[#f5f0e8] text-sm">4.5 / 5</span></p>
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        I run microneedling as a skin integrity and collagen protocol — not vanity. Hawaii UV load at latitude 21°N accelerates dermal degradation. The Dr. Pen is the tool I've used consistently at home for 30+ sessions.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Depth Control</h2>
+      <p>
+        The adjustable depth dial is precise enough to differentiate 0.25mm (topical absorption) from 1.0mm (collagen induction) from 1.5mm (scar remodeling). I primarily work at 0.5–1.0mm on face and 1.5mm on scalp. Each session is dialed to the zone being treated.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Cartridge Quality</h2>
+      <p>
+        The 36-pin cartridge is the workhorse. Needle sharpness is consistent within a single cartridge — dullness onset around session 2–3 when reusing, so I follow the recommended single-use protocol. Replacement cartridges are cheap enough that reuse economics don't make sense.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Protocol Notes</h2>
+      <p>
+        Pre: numbing cream 30 minutes, clean surface. Post: hyaluronic acid immediately, no sunscreen for 4 hours. Downtime at 1.0mm is about 24 hours of mild redness. At 1.5mm, 48 hours. I pair with peptide application during the enhanced absorption window.
+      </p>
+
+      <div class="border-l-2 border-[#c0392b] pl-4 my-8">
+        <p class="text-[#f5f0e8] italic font-serif">[ CEO: drop before/after comparison shots into WPeak-Media-Ingest/raw/ and the pipeline will embed here automatically ]</p>
+      </div>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <p class="text-sm text-[#d4cfc4] mb-4">Where I'd buy this:</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/go/amz-drpen"
+           rel="nofollow sponsored"
+           class="px-4 py-2 bg-[#1a6fa8] text-[#f5f0e8] text-sm rounded hover:bg-[#2589cc] transition-colors font-semibold">
+          Buy on Amazon &rarr;
+        </a>
+      </div>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>

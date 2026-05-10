@@ -1,0 +1,25 @@
+# W.Peak Performance — Affiliate Link Cloaking
+# Cloudflare Pages _redirects format: /go/slug  https://dest  301
+
+# Amazon Associates — add tracking ID after tag= when registered
+/go/amz-red-light-mask        https://www.amazon.com/s?k=red+light+therapy+mask&tag=wpeakperf-20        301
+/go/amz-portable-sauna        https://www.amazon.com/s?k=portable+infrared+sauna&tag=wpeakperf-20       301
+/go/amz-dr-pen                https://www.amazon.com/s?k=dr+pen+microneedling&tag=wpeakperf-20          301
+/go/amz-robot-mower           https://www.amazon.com/s?k=robot+lawn+mower&tag=wpeakperf-20              301
+/go/amz-robot-mop             https://www.amazon.com/s?k=robot+mop+vacuum+combo&tag=wpeakperf-20        301
+/go/amz-salomon               https://www.amazon.com/s?k=salomon+trail+running+shoes&tag=wpeakperf-20   301
+
+# REI
+/go/rei                       https://www.rei.com/?cm_mmc=aff_AL-_-236723-_-297712-_-NA      301
+/go/salomon                   https://www.rei.com/search#q=salomon&ir=q%3Asalomon             301
+
+# Backcountry
+/go/backcountry               https://www.backcountry.com/                                    301
+/go/snowboard                 https://www.backcountry.com/store/snowboarding                  301
+
+# West Marine
+/go/westmarine                https://www.westmarine.com/                                     301
+/go/canoe-paddle              https://www.westmarine.com/kayak-and-canoe-paddles              301
+
+# DJI
+/go/dji                       https://store.dji.com/                                          301

@@ -1,0 +1,71 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Automation & Robotics Gear — W.Peak Performance",
+  "url": "https://w-peak.com/automation",
+  "description": "Robot mowers, robot mops, AI tools. The automation stack tested in a real home.",
+  "publisher": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" }
+};
+
+const gear = [
+  {
+    name: "Robot Lawn Mower",
+    category: "Yard Automation",
+    status: "Owned",
+    slug: "robot-mower",
+    summary: "Boundary-wire vs vision-based comparison. Setup time, error rate, lawn finish quality — measured, not marketed.",
+  },
+  {
+    name: "Robot Mop / Vacuum Combo",
+    category: "Home Automation",
+    status: "Owned",
+    slug: "robot-mop",
+    summary: "All-in-one floor care robot. Daily performance log on Hawaii tile + hardwood. Obstacle avoidance, self-clean dock.",
+  },
+];
+---
+
+<MainLayout
+  title="Automation & AI Tech"
+  description="Robot mowers, robot mops, and AI tools tested at home. Real setup, real results."
+  schema={schema}
+>
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#2589cc] mb-3">Silo 02</p>
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-4">Automation</h1>
+      <p class="text-lg text-[#d4cfc4] max-w-2xl leading-relaxed">
+        Robots that work while you don't. The home automation stack — mowers, mops, AI gear — tested in daily real-world use, not on a showroom floor.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {gear.map((item) => (
+        <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] hover:border-[#2589cc]/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs px-2 py-1 bg-[#1e1e1e] border border-[#2a2a2a] rounded font-mono text-[#d4cfc4]">
+              {item.category}
+            </span>
+            <span class="text-xs font-mono px-2 py-1 rounded text-[#38a350] bg-[#2a7a3b]/10">
+              {item.status}
+            </span>
+          </div>
+          <h2 class="font-serif text-xl text-[#f5f0e8] mb-2">{item.name}</h2>
+          <p class="text-sm text-[#d4cfc4] leading-relaxed mb-4">{item.summary}</p>
+          <a href={`/gear-reviews/${item.slug}`}
+             class="text-xs text-[#4ba3d4] hover:text-[#f5f0e8] transition-colors font-semibold">
+            Full Review &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 p-8 border border-[#2a2a2a] rounded-lg bg-[#141414] text-center">
+      <p class="text-[#d4cfc4] text-sm mb-3">New automation orders being tested now.</p>
+      <p class="text-xs text-[#d4cfc4] font-mono">Drop footage → WPeak-Media-Ingest/raw/ → auto-generates review draft</p>
+    </div>
+  </div>
+</MainLayout>

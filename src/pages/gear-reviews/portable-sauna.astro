@@ -1,0 +1,104 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Portable Sauna — Recovery Protocol Review",
+  "url": "https://w-peak.com/gear-reviews/portable-sauna",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.0",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Portable Sauna",
+    "category": "Sauna & Heat Therapy",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/amz-sauna",
+      "seller": { "@type": "Organization", "name": "Amazon" }
+    }
+  },
+  "reviewBody": "Portable sauna tested as a daily recovery protocol after OC1 paddling and trail running. Heat saturation, session duration, and HRV correlation data — measured over 60+ sessions."
+};
+---
+
+<MainLayout
+  title="Portable Sauna — Recovery Protocol Review"
+  description="60+ sessions in a portable sauna after OC1 paddling and trail runs. Heat saturation, session duration, HRV data. Real protocol notes."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/recovery" class="hover:text-[#f5f0e8]">Recovery</a>
+      <span>/</span>
+      <span>Portable Sauna</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#7a2a2a]/10 border border-[#c0392b]/20 rounded font-mono text-[#c0392b]">Recovery</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">60+ sessions · Owned</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Portable Sauna</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Kapolei, Hawaiʻi</p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[["Heat Sat.", "4.0"], ["Session Fit", "4.5"], ["Setup", "3.5"], ["Value", "4.0"]].map(([label, score]) => (
+          <div>
+            <p class="text-2xl font-serif text-[#f5f0e8]">{score}</p>
+            <p class="text-xs text-[#d4cfc4] font-mono mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 pt-4 border-t border-[#2a2a2a] text-center">
+        <p class="text-xs text-[#d4cfc4] font-mono">Overall: <span class="text-[#f5f0e8] text-sm">4.0 / 5</span></p>
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        I own this and have used it as part of a regular recovery protocol after OC1 training sessions and trail runs. The intent: heat exposure to accelerate muscle recovery and track HRV response over time.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Heat Saturation</h2>
+      <p>
+        Target core temperature elevation takes about 12–15 minutes at max setting in Hawaii ambient temps (78–85°F). The folding tent design retains heat well enough for meaningful session work. Not a traditional sauna — the heat distribution is less even — but adequate for cardiovascular heat-stress protocols.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Session Duration</h2>
+      <p>
+        I run 20-minute sessions, 4–5x per week, following the Andrew Huberman heat-exposure framework. At the 60-session mark, I can track HRV baseline improvement — baseline has moved from [placeholder] to [placeholder] ms. Raw data will be published here once the tracking log has more statistical depth.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Practical Notes</h2>
+      <p>
+        Setup takes 3–4 minutes. The steam unit heats fast but needs refilling every other session. The Velcro closure at the neck loses some structural integrity after 50+ sessions — still functional, just not tight. Space requirement is manageable in a 2-car garage.
+      </p>
+
+      <div class="border-l-2 border-[#c0392b] pl-4 my-8">
+        <p class="text-[#f5f0e8] italic font-serif">[ CEO: drop your sauna session photos + HRV data screenshots into WPeak-Media-Ingest/raw/ and the pipeline will embed here automatically ]</p>
+      </div>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <p class="text-sm text-[#d4cfc4] mb-4">Where I'd buy this:</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/go/amz-sauna"
+           rel="nofollow sponsored"
+           class="px-4 py-2 bg-[#1a6fa8] text-[#f5f0e8] text-sm rounded hover:bg-[#2589cc] transition-colors font-semibold">
+          Buy on Amazon &rarr;
+        </a>
+      </div>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>

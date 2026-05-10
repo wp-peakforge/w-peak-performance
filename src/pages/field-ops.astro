@@ -1,0 +1,109 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Field Ops — Outdoors & OC1 Racing — W.Peak Performance",
+  "url": "https://w-peak.com/field-ops",
+  "description": "Salomon trail shoes, snowboarding gear, new canoe paddle, and OC1 outrigger racing with Syndi. Pacific conditions, honest field reports.",
+  "publisher": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" }
+};
+
+const gear = [
+  {
+    name: "Salomon Trail Shoes",
+    category: "Trail Running",
+    status: "In Field",
+    slug: "salomon-trail",
+    affiliate: "/go/salomon",
+    partner: "REI",
+    summary: "Multi-surface testing on Oahu trails. Grip, drainage, durability over 200+ miles. Honest wear report.",
+  },
+  {
+    name: "Snowboarding Kit",
+    category: "Snow Sports",
+    status: "Owned",
+    slug: "snowboard-kit",
+    affiliate: "/go/backcountry",
+    partner: "Backcountry",
+    summary: "Current season setup — board, bindings, boots. Full spec sheet + mountain performance notes.",
+  },
+  {
+    name: "New Canoe Paddle",
+    category: "OC1 Racing",
+    status: "Testing",
+    slug: "canoe-paddle",
+    affiliate: "/go/westmarine",
+    partner: "West Marine",
+    summary: "Carbon vs fiberglass comparison. Blade geometry, shaft flex, performance on open ocean swell.",
+  },
+];
+
+const racingContent = [
+  { title: "Syndi's 2026 Race Calendar", href: "#", date: "2026-05" },
+  { title: "OC1 Training Protocol — Oahu Circuit", href: "#", date: "2026-05" },
+];
+---
+
+<MainLayout
+  title="Field Ops — Outdoors & Racing"
+  description="Salomon shoes, snowboard kit, canoe paddle, and OC1 racing. Pacific outdoor life, tested in the field."
+  schema={schema}
+>
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#38a350] mb-3">Silo 03</p>
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-4">Field Ops</h1>
+      <p class="text-lg text-[#d4cfc4] max-w-2xl leading-relaxed">
+        Trail running, snowboarding, OC1 racing — the outdoor vertical. Equipment tested in Pacific conditions by athletes who actually use it.
+      </p>
+    </div>
+
+    <!-- OC1 Racing Feature -->
+    <div class="border border-[#38a350]/30 rounded-lg p-6 bg-[#2a7a3b]/5 mb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#38a350]"></span>
+        <p class="text-xs font-mono uppercase tracking-widest text-[#38a350]">Featured · OC1 Racing</p>
+      </div>
+      <h2 class="font-serif text-2xl text-[#f5f0e8] mb-2">Syndi on the water.</h2>
+      <p class="text-sm text-[#d4cfc4] leading-relaxed mb-4 max-w-xl">
+        Competitive OC1 outrigger canoe racing on Oahuʻs open ocean. Training protocols, gear selection, race reports. Not a lifestyle brand — actual racing.
+      </p>
+      <div class="flex flex-col gap-2">
+        {racingContent.map(r => (
+          <a href={r.href} class="text-sm text-[#4ba3d4] hover:text-[#f5f0e8] transition-colors">
+            {r.title} <span class="text-[#d4cfc4] text-xs ml-2">{r.date}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Gear Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {gear.map((item) => (
+        <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] hover:border-[#38a350]/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs px-2 py-1 bg-[#1e1e1e] border border-[#2a2a2a] rounded font-mono text-[#d4cfc4]">
+              {item.category}
+            </span>
+            <span class="text-xs font-mono text-[#d4cfc4]">{item.status}</span>
+          </div>
+          <h2 class="font-serif text-lg text-[#f5f0e8] mb-2">{item.name}</h2>
+          <p class="text-sm text-[#d4cfc4] leading-relaxed mb-4">{item.summary}</p>
+          <div class="flex gap-3">
+            <a href={`/gear-reviews/${item.slug}`}
+               class="text-xs text-[#4ba3d4] hover:text-[#f5f0e8] transition-colors font-semibold">
+              Full Review &rarr;
+            </a>
+            <a href={item.affiliate}
+               class="text-xs text-[#d4cfc4] hover:text-[#f5f0e8] transition-colors"
+               rel="nofollow sponsored">
+              {item.partner}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</MainLayout>

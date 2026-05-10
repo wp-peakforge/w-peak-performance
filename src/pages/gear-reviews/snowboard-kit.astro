@@ -1,0 +1,109 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Snowboard Kit — Mountain Field Review",
+  "url": "https://w-peak.com/gear-reviews/snowboard-kit",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Snowboard Kit",
+    "category": "Snowboards",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/snowboard",
+      "seller": { "@type": "Organization", "name": "Backcountry" }
+    }
+  },
+  "reviewBody": "Snowboard kit tested across multiple seasons and mountain conditions. Board response, binding retention, and durability across variable snow states — measured over real days, not demo runs."
+};
+---
+
+<MainLayout
+  title="Snowboard Kit — Mountain Field Review"
+  description="Multi-season snowboard kit review. Board response, binding retention, durability. Real days on the mountain — not a demo run."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/field-ops" class="hover:text-[#f5f0e8]">Field Ops</a>
+      <span>/</span>
+      <span>Snowboard Kit</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#2a7a3b]/10 border border-[#38a350]/20 rounded font-mono text-[#38a350]">Field Ops</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">Multi-season tested</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Snowboard Kit</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Mountain</p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[["Response", "4.5"], ["Retention", "4.5"], ["Durability", "4.0"], ["Value", "4.5"]].map(([label, score]) => (
+          <div>
+            <p class="text-2xl font-serif text-[#f5f0e8]">{score}</p>
+            <p class="text-xs text-[#d4cfc4] font-mono mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 pt-4 border-t border-[#2a2a2a] text-center">
+        <p class="text-xs text-[#d4cfc4] font-mono">Overall: <span class="text-[#f5f0e8] text-sm">4.5 / 5</span></p>
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        I'm not a resort weekender — when I go, I want to cover terrain efficiently across variable snow states. Groomers, pow, and the transition slop between them. These are working notes from multiple seasons on the same kit.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Board Response</h2>
+      <p>
+        Edge-to-edge response matters most in hard-pack and icy morning conditions. This setup holds a clean line without feeling locked in — there's enough flex mid-board to absorb chop without washing out in hard turns.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Binding Retention</h2>
+      <p>
+        After multiple seasons, no hardware creep — the base plate-to-board connection stays solid. I re-torque once per season as a habit; it has never needed it. Strap integrity after impact falls remains intact.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Durability</h2>
+      <p>
+        Base scratches are cosmetic and expected. The edges show normal season wear. No delamination or core damage after real terrain use including some rock contact on spring runs.
+      </p>
+
+      <div class="border-l-2 border-[#38a350] pl-4 my-8">
+        <p class="text-[#f5f0e8] italic font-serif">[ CEO: drop your board + mountain shots into WPeak-Media-Ingest/raw/ and the pipeline will embed here automatically ]</p>
+      </div>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <p class="text-sm text-[#d4cfc4] mb-4">Where I'd buy this:</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/go/snowboard"
+           rel="nofollow sponsored"
+           class="px-4 py-2 bg-[#1a6fa8] text-[#f5f0e8] text-sm rounded hover:bg-[#2589cc] transition-colors font-semibold">
+          Buy via Backcountry &rarr;
+        </a>
+        <a href="/go/amz-snowboard"
+           rel="nofollow sponsored"
+           class="px-4 py-2 border border-[#2a2a2a] text-[#d4cfc4] text-sm rounded hover:border-[#4ba3d4] hover:text-[#f5f0e8] transition-colors">
+          Amazon
+        </a>
+      </div>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>

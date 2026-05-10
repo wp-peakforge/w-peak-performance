@@ -1,0 +1,105 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Red Light Therapy Mask — 90-Day Protocol Log",
+  "url": "https://w-peak.com/gear-reviews/red-light-mask",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.0",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Red Light Therapy LED Face Mask",
+    "category": "Recovery Technology",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/amz-red-light-mask",
+      "seller": { "@type": "Organization", "name": "Amazon" }
+    }
+  },
+  "reviewBody": "90-day daily protocol log. 10 minutes per session, tracking inflammation, skin quality, and recovery metrics. No paid partnership — personal purchase."
+};
+---
+
+<MainLayout
+  title="Red Light Therapy Mask — 90-Day Protocol Log"
+  description="90-day daily red light therapy protocol. 10min/day. Logging inflammation, skin, and recovery markers. Real data, no sponsorship."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/recovery" class="hover:text-[#f5f0e8]">Recovery</a>
+      <span>/</span>
+      <span>Red Light Mask</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#c0392b]/10 border border-[#e74c3c]/20 rounded font-mono text-[#e74c3c]">Recovery</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">Active Protocol — Day 1</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Red Light Therapy Mask</h1>
+      <p class="text-[#d4cfc4]">Protocol started 2026-05-09 · Testing window: 90 days</p>
+    </div>
+
+    <!-- Protocol specs -->
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#d4cfc4] mb-4">Protocol Parameters</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+        {[
+          ["Duration", "10 min/session"],
+          ["Frequency", "Daily"],
+          ["Wavelengths", "630nm + 850nm"],
+          ["Window", "90 days"],
+        ].map(([label, val]) => (
+          <div>
+            <p class="text-xs text-[#d4cfc4] font-mono mb-1">{label}</p>
+            <p class="text-[#f5f0e8]">{val}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        This is a protocol log, not a marketing review. I bought this mask, I'm using it daily, and I'll update the results at Day 30, 60, and 90 with honest observations.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">What I'm tracking</h2>
+      <ul class="list-none space-y-2 text-sm">
+        {[
+          "Skin texture and tone (subjective + iPhone photo log)",
+          "Inflammation markers (post-training recovery feel)",
+          "Sleep quality correlation (session timing: AM vs PM)",
+          "Acne/blemish frequency",
+        ].map(item => (
+          <li class="flex gap-2"><span class="text-[#e74c3c]">→</span>{item}</li>
+        ))}
+      </ul>
+
+      <div class="border-l-2 border-[#e74c3c]/30 pl-4 my-8">
+        <p class="text-xs font-mono text-[#d4cfc4]">DAY 1 BASELINE</p>
+        <p class="mt-1">
+          [ CEO: Add your Day 1 notes here. Drop purchase photo + before photo into WPeak-Media-Ingest/raw/. Pipeline auto-embeds. ]
+        </p>
+      </div>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <a href="/go/amz-red-light-mask"
+         rel="nofollow sponsored"
+         class="inline-flex items-center gap-2 px-4 py-2 bg-[#c0392b] text-[#f5f0e8] text-sm rounded hover:bg-[#e74c3c] transition-colors font-semibold">
+        View on Amazon &rarr;
+      </a>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>

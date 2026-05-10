@@ -1,0 +1,102 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Peptide Recovery Protocol — Active Log",
+  "url": "https://w-peak.com/gear-reviews/peptides",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.5",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Peptide Recovery Compounds",
+    "category": "Sports Recovery Supplements"
+  },
+  "reviewBody": "Active peptide recovery protocol log. BPC-157, TB-500, and collagen peptides as part of a structured recovery stack. Protocol parameters, sourcing notes, and outcome tracking."
+};
+---
+
+<MainLayout
+  title="Peptide Recovery Protocol — Active Log"
+  description="Active peptide recovery protocol log. BPC-157, TB-500, and collagen peptides. Protocol parameters, sourcing, and outcome tracking — updated as the protocol runs."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/recovery" class="hover:text-[#f5f0e8]">Recovery</a>
+      <span>/</span>
+      <span>Peptides</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#7a2a2a]/10 border border-[#c0392b]/20 rounded font-mono text-[#c0392b]">Recovery</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">Active Protocol</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Peptide Protocol</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Kapolei, Hawaiʻi</p>
+    </div>
+
+    <!-- Protocol Parameters -->
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <p class="text-xs font-mono text-[#d4cfc4] mb-4 uppercase tracking-wider">Protocol Parameters</p>
+      <div class="space-y-2 text-sm">
+        {[
+          ["Status", "Active"],
+          ["Protocol start", "2026-04"],
+          ["Primary compounds", "BPC-157, TB-500, Collagen"],
+          ["Injection frequency", "Daily (BPC-157) / 2x week (TB-500)"],
+          ["Duration", "12-week cycle"],
+          ["Primary goal", "Tendon repair, connective tissue health"],
+        ].map(([label, value]) => (
+          <div class="flex gap-4">
+            <span class="text-[#d4cfc4] font-mono w-40 shrink-0">{label}</span>
+            <span class="text-[#f5f0e8]">{value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        This is a live protocol log — not a finished review. I update it as the cycle runs. If you're reading this, the protocol is active. Come back in 8 weeks for the full outcome data.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Why Peptides</h2>
+      <p>
+        OC1 racing and trail running create repetitive loading stress on connective tissue — tendons, ligaments, fascia. Standard recovery (sleep, protein, sauna) addresses muscle tissue well. Connective tissue repair is slower and responds differently. BPC-157 and TB-500 are the most studied repair peptides for this use case.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Protocol Design</h2>
+      <p>
+        BPC-157 at 250mcg subcutaneous daily, timed near training. TB-500 at 5mg twice weekly for the first four weeks, then taper to 2.5mg weekly as maintenance. Collagen peptides (15g, oral) taken with Vitamin C 30 minutes pre-training to support collagen synthesis during mechanical loading.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Tracking Metrics</h2>
+      <ul class="list-disc list-inside space-y-1 ml-4">
+        <li>Tendon pain score (0-10) at target sites — tracked weekly</li>
+        <li>HRV baseline (Oura ring, morning measurement)</li>
+        <li>Training load tolerance — sessions per week at target intensity</li>
+        <li>Subjective recovery quality (1-5 scale, post-session)</li>
+      </ul>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Week 1 Baseline</h2>
+      <p>
+        [ Placeholder — CEO: add week 1 baseline readings here ]
+      </p>
+
+      <div class="border-l-2 border-[#c0392b] pl-4 my-8">
+        <p class="text-sm text-[#d4cfc4]">
+          <strong class="text-[#f5f0e8]">Disclosure:</strong> Peptides are research compounds. I am not a doctor. This is a personal protocol log, not medical advice. Research your jurisdiction's laws before sourcing.
+        </p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

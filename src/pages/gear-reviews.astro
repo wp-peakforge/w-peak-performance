@@ -1,0 +1,53 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Will be populated by media_asset_ingest.py
+// For now, static index of known gear
+const allGear = [
+  { title: "Red Light Therapy Mask", silo: "recovery", slug: "red-light-mask", status: "in-testing" },
+  { title: "Portable Infrared Sauna", silo: "recovery", slug: "portable-sauna", status: "owned" },
+  { title: "Dr. Pen Microneedling", silo: "recovery", slug: "dr-pen", status: "owned" },
+  { title: "Peptides Stack", silo: "recovery", slug: "peptides", status: "active" },
+  { title: "Robot Lawn Mower", silo: "automation", slug: "robot-mower", status: "owned" },
+  { title: "Robot Mop / Vacuum", silo: "automation", slug: "robot-mop", status: "owned" },
+  { title: "Salomon Trail Shoes", silo: "field-ops", slug: "salomon-trail", status: "in-field" },
+  { title: "Snowboarding Kit", silo: "field-ops", slug: "snowboard-kit", status: "owned" },
+  { title: "Canoe Paddle", silo: "field-ops", slug: "canoe-paddle", status: "testing" },
+];
+
+const siloColor: Record<string, string> = {
+  recovery: "#e74c3c",
+  automation: "#2589cc",
+  "field-ops": "#38a350",
+};
+---
+
+<MainLayout
+  title="All Gear Reviews"
+  description="Every product tested at W.Peak Performance — recovery tech, automation, and outdoor gear. All owned, all tested."
+>
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-4">All Gear</h1>
+      <p class="text-lg text-[#d4cfc4] leading-relaxed">
+        Every review is based on a personal purchase and real testing. No gifted gear, no press samples.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      {allGear.map((item) => (
+        <a href={`/gear-reviews/${item.slug}`}
+           class="flex items-center gap-4 p-4 border border-[#2a2a2a] rounded-lg bg-[#141414] hover:border-[#4ba3d4]/50 hover:bg-[#1e1e1e] transition-all group">
+          <div class="w-2 h-2 rounded-full flex-shrink-0" style={`background-color: ${siloColor[item.silo] ?? '#4ba3d4'}`}></div>
+          <span class="font-serif text-lg text-[#f5f0e8] group-hover:text-[#4ba3d4] transition-colors flex-1">
+            {item.title}
+          </span>
+          <span class="text-xs font-mono text-[#d4cfc4] uppercase tracking-widest">{item.silo}</span>
+          <span class="text-xs font-mono text-[#d4cfc4]">{item.status}</span>
+          <span class="text-[#d4cfc4] group-hover:text-[#4ba3d4] transition-colors">&rarr;</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</MainLayout>

@@ -1,0 +1,103 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Recovery & Longevity Gear — W.Peak Performance",
+  "url": "https://w-peak.com/recovery",
+  "description": "Red light therapy, portable sauna, Dr. Pen microneedling, peptides, and the full recovery stack. Tested by a real human, not a marketing team.",
+  "publisher": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" }
+};
+
+const gear = [
+  {
+    name: "Red Light Therapy Mask",
+    category: "Photobiomodulation",
+    status: "In Testing",
+    slug: "red-light-mask",
+    asin: "",
+    summary: "Full-face LED mask for skin recovery and inflammation. Testing protocol: 10min/day, 90-day log.",
+  },
+  {
+    name: "Portable Infrared Sauna",
+    category: "Heat Therapy",
+    status: "Owned",
+    slug: "portable-sauna",
+    asin: "",
+    summary: "Foldable infrared unit for post-workout and immune protocol. Compared against Clearlight fixed install.",
+  },
+  {
+    name: "Dr. Pen Microneedling",
+    category: "Skin Repair",
+    status: "Owned",
+    slug: "dr-pen",
+    asin: "",
+    summary: "Automated microneedling device. Used for scar work and collagen stimulation. Depth settings, serum pairing, recovery protocol.",
+  },
+  {
+    name: "Peptides Stack",
+    category: "Performance Biology",
+    status: "Active Protocol",
+    slug: "peptides",
+    asin: "",
+    summary: "BPC-157, TB-500, GHK-Cu — sourcing, cycling, and results logged over 6-month period.",
+  },
+];
+---
+
+<MainLayout
+  title="Recovery & Longevity"
+  description="Red light therapy, portable sauna, Dr. Pen, and the full recovery tech stack. Tested, not promoted."
+  schema={schema}
+>
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="mb-12">
+      <p class="text-xs font-mono uppercase tracking-widest text-[#e74c3c] mb-3">Silo 01</p>
+      <h1 class="font-serif text-5xl text-[#f5f0e8] mb-4">Recovery</h1>
+      <p class="text-lg text-[#d4cfc4] max-w-2xl leading-relaxed">
+        The recovery stack for high-output humans. Red light, heat, microneedling, peptides. Tested with real protocols, logged with real results.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {gear.map((item) => (
+        <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] hover:border-[#e74c3c]/50 transition-colors">
+          <div class="flex items-start justify-between mb-3">
+            <span class="text-xs px-2 py-1 bg-[#1e1e1e] border border-[#2a2a2a] rounded font-mono text-[#d4cfc4]">
+              {item.category}
+            </span>
+            <span class={`text-xs font-mono px-2 py-1 rounded ${
+              item.status === "In Testing"
+                ? "text-[#e74c3c] bg-[#c0392b]/10"
+                : "text-[#38a350] bg-[#2a7a3b]/10"
+            }`}>
+              {item.status}
+            </span>
+          </div>
+          <h2 class="font-serif text-xl text-[#f5f0e8] mb-2">{item.name}</h2>
+          <p class="text-sm text-[#d4cfc4] leading-relaxed mb-4">{item.summary}</p>
+          <div class="flex gap-3">
+            <a href={`/gear-reviews/${item.slug}`}
+               class="text-xs text-[#4ba3d4] hover:text-[#f5f0e8] transition-colors font-semibold">
+              Full Review &rarr;
+            </a>
+            {item.asin && (
+              <a href={`/go/amz-${item.slug}`}
+                 class="text-xs text-[#d4cfc4] hover:text-[#f5f0e8] transition-colors"
+                 rel="nofollow sponsored">
+                Amazon &uarr;
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 p-6 border border-[#e74c3c]/20 rounded-lg bg-[#c0392b]/5">
+      <p class="text-xs text-[#d4cfc4] leading-relaxed">
+        <strong class="text-[#f5f0e8]">Testing protocol:</strong> All recovery gear is used on a personal protocol, not gifted or sponsored. Results are logged with dates. Affiliate links help support the site at no cost to you.
+      </p>
+    </div>
+  </div>
+</MainLayout>

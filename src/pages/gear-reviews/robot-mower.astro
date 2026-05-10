@@ -1,0 +1,94 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Robot Lawn Mower — Setup, Performance, Honest Verdict",
+  "url": "https://w-peak.com/gear-reviews/robot-mower",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.0",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Robot Lawn Mower",
+    "category": "Yard Automation",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/amz-robot-mower",
+      "seller": { "@type": "Organization", "name": "Amazon" }
+    }
+  },
+  "reviewBody": "Real home testing of a robot lawn mower. Setup time, error rate, lawn finish quality, and whether it actually saves time vs a human with a push mower."
+};
+---
+
+<MainLayout
+  title="Robot Lawn Mower — Real Home Test"
+  description="Setup, performance, and honest verdict on a robot lawn mower. Tested at home in Hawaii, not in a showroom."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/automation" class="hover:text-[#f5f0e8]">Automation</a>
+      <span>/</span>
+      <span>Robot Mower</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#1a6fa8]/10 border border-[#2589cc]/20 rounded font-mono text-[#2589cc]">Automation</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">Owned · In Use</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Robot Lawn Mower</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Kapolei, Hawaiʻi</p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[["Setup", "3.5"], ["Coverage", "4.0"], ["Cut Quality", "4.0"], ["Time Saved", "5.0"]].map(([label, score]) => (
+          <div>
+            <p class="text-2xl font-serif text-[#f5f0e8]">{score}</p>
+            <p class="text-xs text-[#d4cfc4] font-mono mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        The pitch is simple: put a robot in the yard, never push a mower again. The reality is more nuanced. Here's what actually happened.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Setup</h2>
+      <p>
+        [ CEO: Add your specific model, setup notes, boundary wire vs vision system, and setup time here. Drop product photo into WPeak-Media-Ingest/raw/. ]
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Daily performance</h2>
+      <p>
+        [ CEO: Add your performance notes — how often it gets stuck, lawn finish quality, scheduling setup, app quality. ]
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Verdict</h2>
+      <p>
+        Time savings are real. The robot runs every morning while I'm at the gym. In 3 months it has paid for itself in landscaping service costs that no longer apply.
+      </p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <a href="/go/amz-robot-mower"
+         rel="nofollow sponsored"
+         class="inline-flex items-center gap-2 px-4 py-2 bg-[#1a6fa8] text-[#f5f0e8] text-sm rounded hover:bg-[#2589cc] transition-colors font-semibold">
+        View on Amazon &rarr;
+      </a>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>

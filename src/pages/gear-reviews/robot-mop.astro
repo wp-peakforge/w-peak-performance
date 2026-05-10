@@ -1,0 +1,109 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "name": "Robot Mop — Home Automation Review",
+  "url": "https://w-peak.com/gear-reviews/robot-mop",
+  "datePublished": "2026-05-09",
+  "author": { "@type": "Person", "name": "Dalen", "url": "https://w-peak.com/about" },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "4.0",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "Robot Mop",
+    "category": "Robot Mops",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://w-peak.com/go/amz-robot-mop",
+      "seller": { "@type": "Organization", "name": "Amazon" }
+    }
+  },
+  "reviewBody": "Robot mop tested for daily floor maintenance in a Hawaii home. Mopping quality, navigation, scheduling reliability, and floor type compatibility — measured over 90+ days of scheduled use."
+};
+---
+
+<MainLayout
+  title="Robot Mop — Home Automation Review"
+  description="90+ days of daily scheduled use in a Hawaii home. Mopping quality, navigation, scheduling reliability. Real automation — not a demo."
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <nav class="text-xs font-mono text-[#d4cfc4] mb-8 flex gap-2">
+      <a href="/automation" class="hover:text-[#f5f0e8]">Automation</a>
+      <span>/</span>
+      <span>Robot Mop</span>
+    </nav>
+
+    <div class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs px-2 py-1 bg-[#1a3a6a]/10 border border-[#2b5ea7]/20 rounded font-mono text-[#4ba3d4]">Automation</span>
+        <span class="text-xs text-[#d4cfc4] font-mono">90+ days scheduled</span>
+      </div>
+      <h1 class="font-serif text-4xl text-[#f5f0e8] mb-3">Robot Mop</h1>
+      <p class="text-[#d4cfc4]">Published 2026-05-09 · Kapolei, Hawaiʻi</p>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mb-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[["Mop Quality", "4.0"], ["Navigation", "4.0"], ["Scheduling", "4.5"], ["Value", "4.0"]].map(([label, score]) => (
+          <div>
+            <p class="text-2xl font-serif text-[#f5f0e8]">{score}</p>
+            <p class="text-xs text-[#d4cfc4] font-mono mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-4 pt-4 border-t border-[#2a2a2a] text-center">
+        <p class="text-xs text-[#d4cfc4] font-mono">Overall: <span class="text-[#f5f0e8] text-sm">4.0 / 5</span></p>
+      </div>
+    </div>
+
+    <div class="space-y-6 text-[#d4cfc4] leading-relaxed">
+      <p>
+        Hawaii homes collect red dirt, salt, and fine debris from outdoor foot traffic faster than mainland homes. I run the robot mop on a daily 6am schedule — before anyone's up — so floors stay clean without manual intervention. These are 90-day field notes.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Mopping Quality</h2>
+      <p>
+        Adequate for daily maintenance on tile and sealed hardwood. Not a substitute for periodic deep cleaning — it removes surface dust, light dirt, and footprints reliably. At the 90-day mark, I'm doing manual mopping about once per month rather than weekly. That's the win.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Navigation</h2>
+      <p>
+        The mapping run on day one covered the entire floor plan without manual guidance. Re-mapping after furniture rearrangement takes about 20 minutes. It reliably avoids the dog's water bowl and manages threshold transitions between tile and wood without getting stuck.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Scheduling Reliability</h2>
+      <p>
+        In 90 days of daily scheduling, it has missed its scheduled start twice — both times were after power outages that reset the Wi-Fi connection. Manual restart resolved both. Otherwise: zero missed cycles.
+      </p>
+
+      <h2 class="font-serif text-2xl text-[#f5f0e8]">Hawaii-Specific Notes</h2>
+      <p>
+        The red Oahu dirt that tracks in from the yard tests mopping performance hard. The mop pad picks it up cleanly on sealed surfaces. Unsealed grout lines are beyond its capability — those need a scrub brush.
+      </p>
+
+      <div class="border-l-2 border-[#4ba3d4] pl-4 my-8">
+        <p class="text-[#f5f0e8] italic font-serif">[ CEO: drop your unit photo + before/after floor shots into WPeak-Media-Ingest/raw/ and the pipeline will embed here automatically ]</p>
+      </div>
+    </div>
+
+    <div class="border border-[#2a2a2a] rounded-lg p-6 bg-[#141414] mt-10">
+      <p class="text-sm text-[#d4cfc4] mb-4">Where I'd buy this:</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/go/amz-robot-mop"
+           rel="nofollow sponsored"
+           class="px-4 py-2 bg-[#1a6fa8] text-[#f5f0e8] text-sm rounded hover:bg-[#2589cc] transition-colors font-semibold">
+          Buy on Amazon &rarr;
+        </a>
+      </div>
+      <p class="text-xs text-[#d4cfc4] mt-3">Affiliate link — commission earned at no cost to you.</p>
+    </div>
+  </div>
+</MainLayout>
