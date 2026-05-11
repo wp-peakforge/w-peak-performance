@@ -38,9 +38,12 @@ const silos = [
 <MainLayout title="Home" description="W.Peak Performance — tested by humans, readable by agents. Recovery tech, automation gear, and Pacific outdoor life.">
   <!-- Hero -->
   <section class="relative min-h-[80vh] flex items-end pb-16 px-4 overflow-hidden">
+    <video
+      autoplay muted loop playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+      src="/hero.mp4"
+    ></video>
     <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/20 via-[#0a0a0a]/60 to-[#0a0a0a]"></div>
-    <!-- Placeholder hero bg — CEO will drop OC1/drone footage here -->
-    <div class="absolute inset-0 bg-gradient-to-br from-[#141414] via-[#1e1e1e] to-[#0a0a0a]"></div>
 
     <div class="relative max-w-6xl mx-auto w-full">
       <p class="text-xs font-mono uppercase tracking-widest text-[#4ba3d4] mb-4">W.Peak Performance</p>
@@ -102,8 +105,10 @@ const silos = [
           See Field Ops gear &rarr;
         </a>
       </div>
-      <div class="w-full md:w-80 h-48 rounded-lg bg-[#1e1e1e] border border-[#2a2a2a] flex items-center justify-center">
-        <p class="text-[#6b6560] text-sm font-mono">[ OC1 footage — drop in WPeak-Media-Ingest/raw/ ]</p>
+      <div class="w-full md:w-80 h-48 rounded-lg overflow-hidden">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
   </section>
