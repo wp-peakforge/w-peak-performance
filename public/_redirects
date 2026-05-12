@@ -2,16 +2,16 @@
 # Cloudflare Pages _redirects format: /go/slug  https://dest  301
 
 # Amazon Associates — add tracking ID after tag= when registered
-/go/amz-red-light-mask        https://www.amazon.com/s?k=red+light+therapy+mask&tag=wpeakperf-20        301
-/go/amz-portable-sauna        https://www.amazon.com/s?k=portable+infrared+sauna&tag=wpeakperf-20       301
-/go/amz-dr-pen                https://www.amazon.com/s?k=dr+pen+microneedling&tag=wpeakperf-20          301
-/go/amz-robot-mower           https://www.amazon.com/s?k=robot+lawn+mower&tag=wpeakperf-20              301
-/go/amz-robot-mop             https://www.amazon.com/s?k=robot+mop+vacuum+combo&tag=wpeakperf-20        301
-/go/amz-salomon               https://www.amazon.com/s?k=salomon+trail+running+shoes&tag=wpeakperf-20   301
-/go/amz-drpen                 https://www.amazon.com/s?k=dr+pen+microneedling&tag=wpeakperf-20          301
-/go/amz-sauna                 https://www.amazon.com/s?k=portable+infrared+sauna&tag=wpeakperf-20       301
-/go/amz-snowboard             https://www.amazon.com/s?k=snowboard&tag=wpeakperf-20                     301
-/go/amz-paddle                https://www.amazon.com/s?k=outrigger+canoe+paddle&tag=wpeakperf-20        301
+/go/amz-red-light-mask        https://www.amazon.com/s?k=red+light+therapy+mask&tag=wpeakperf20        301
+/go/amz-portable-sauna        https://www.amazon.com/s?k=portable+infrared+sauna&tag=wpeakperf20       301
+/go/amz-dr-pen                https://www.amazon.com/s?k=dr+pen+microneedling&tag=wpeakperf20          301
+/go/amz-robot-mower           https://www.amazon.com/s?k=robot+lawn+mower&tag=wpeakperf20              301
+/go/amz-robot-mop             https://www.amazon.com/s?k=robot+mop+vacuum+combo&tag=wpeakperf20        301
+/go/amz-salomon               https://www.amazon.com/s?k=salomon+trail+running+shoes&tag=wpeakperf20   301
+/go/amz-drpen                 https://www.amazon.com/s?k=dr+pen+microneedling&tag=wpeakperf20          301
+/go/amz-sauna                 https://www.amazon.com/s?k=portable+infrared+sauna&tag=wpeakperf20       301
+/go/amz-snowboard             https://www.amazon.com/s?k=snowboard&tag=wpeakperf20                     301
+/go/amz-paddle                https://www.amazon.com/s?k=outrigger+canoe+paddle&tag=wpeakperf20        301
 
 # REI
 /go/rei                       https://www.rei.com/?cm_mmc=aff_AL-_-236723-_-297712-_-NA      301
